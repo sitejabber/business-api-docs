@@ -24,7 +24,7 @@ Login Object
 Name | Type | Optional | Description
 --------- | ------- | ----------- | -----------
 token | String | No | Token used in subsequent calls as user identifier
-expire | DateTime | No | When the token will expire
+expire | DateTime | No | When the token will expire (typically after 6 months)
 user | User object | No | User logged in into the system
 
 Url Object
