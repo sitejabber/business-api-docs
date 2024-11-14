@@ -3826,6 +3826,43 @@ https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/vote?cli
 </tr>
 </tbody></table>
 
+<h2 id="get-product-reviews-stats">Get product reviews stats</h2>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582"</span>
+https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats?client_token<span class="o">=</span>myapikey
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$header</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582'</span>
+<span class="p">];</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats?client_token=myapikey'</span><span class="p">;</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_HTTP_VERSION</span><span class="p">,</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$header</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_reviews_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2622</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"average_rating"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.43"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint get the published product reviews stats (total and average rating).</p>
+
+<h3 id="http-request">HTTP request</h3>
+
+<p><code class="prettyprint">GET https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats</code></p>
+
 <h1 id="product-review-requests">Product Review Requests</h1>
 
 <h2 id="create-product-review-request">Create product review request</h2>
