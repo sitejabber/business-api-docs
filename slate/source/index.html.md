@@ -2458,6 +2458,16 @@ This endpoint get the published product reviews stats (total and average rating)
 
 `GET https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats`
 
+### Query parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+sku | false | retrieve stats for the given product sku
+categories | false | retrieve stats for products in the given categories (separated by commas)
+item_group | false | retrieve stats for the given group of products, if specified sku is ignored
+brand | false | retrieve stats for products in the given brand
+
+
 # Product Review Requests
 
 ## Create product review request

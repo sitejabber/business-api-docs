@@ -3863,6 +3863,37 @@ https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats?cl
 
 <p><code class="prettyprint">GET https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats</code></p>
 
+<h3 id="query-parameters">Query parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>false</td>
+<td>retrieve stats for the given product sku</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>false</td>
+<td>retrieve stats for products in the given categories (separated by commas)</td>
+</tr>
+<tr>
+<td>item_group</td>
+<td>false</td>
+<td>retrieve stats for the given group of products, if specified sku is ignored</td>
+</tr>
+<tr>
+<td>brand</td>
+<td>false</td>
+<td>retrieve stats for products in the given brand</td>
+</tr>
+</tbody></table>
+
 <h1 id="product-review-requests">Product Review Requests</h1>
 
 <h2 id="create-product-review-request">Create product review request</h2>
