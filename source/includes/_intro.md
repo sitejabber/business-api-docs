@@ -80,7 +80,7 @@ edited | DateTime | Yes | DateTime the review was edited
 editedRFC | DateTime | Yes | Same as edited but in format RFC 3339
 removedRFC | DateTime | Yes | DateTime the review was removed in format RFC 3339 (only available if the review is removed)
 updated_for | Review object | Yes | If this is an updated review, this will contain the original review
-source | String | Yes | Only available for solicited reviews, indicates the source, can be one of the following: BCC, CSV, WEBHOOK, CHECKOUT_WIDGET, OTHER
+source | String | Yes | Only available for solicited reviews, indicates the source, can be one of the following: BCC, CSV, WEBHOOK, CHECKOUT_WIDGET, API, WEB, QUICK_REQUEST, OTHER
 datasource | String | Yes | Indicates the 3rd party data source (check the data sources section)
 labels | Array | Yes | Array of labels
 author | User object | No | Author of the review

@@ -216,5 +216,6 @@ date_to | null | end date in format (yyyy-mm-dd hh:mm:ss) [hh:mm:ss] is optional
 unpublished | false | include unpublished reviews (0 or 1)
 updated | false | search updated reviews (0 or 1)
 deleted | false | returns only deleted reviews (0 or 1)
+solicited | null | returns organic or solicited reviews (0 or 1), defaults to all reviews
 datasources | false | include reviews from specified comma separated data sources (check the data sources section)
 order | DESC | ASC/DESC order of the reviews, ascending or descending on the creation date

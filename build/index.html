@@ -820,7 +820,7 @@
 <td>source</td>
 <td>String</td>
 <td>Yes</td>
-<td>Only available for solicited reviews, indicates the source, can be one of the following: BCC, CSV, WEBHOOK, CHECKOUT_WIDGET, OTHER</td>
+<td>Only available for solicited reviews, indicates the source, can be one of the following: BCC, CSV, WEBHOOK, CHECKOUT_WIDGET, API, WEB, QUICK_REQUEST, OTHER</td>
 </tr>
 <tr>
 <td>datasource</td>
@@ -2250,6 +2250,11 @@ Calling login method invalidates any previous generated user token.
 <td>deleted</td>
 <td>false</td>
 <td>returns only deleted reviews (0 or 1)</td>
+</tr>
+<tr>
+<td>solicited</td>
+<td>null</td>
+<td>returns organic or solicited reviews (0 or 1), defaults to all reviews</td>
 </tr>
 <tr>
 <td>datasources</td>
