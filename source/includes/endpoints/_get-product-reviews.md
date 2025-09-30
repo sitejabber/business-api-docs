@@ -123,13 +123,15 @@ Parameter | Required | Description
 start | 0 | starting offset
 count | 10 | number of reviews to be included (max 100)
 sku | false | retrieve reviews for the given product sku
-item_group | false | retrieve reviews for the given group of products, if specified sku is ignored
-q | false | retrieve product reviews matching given keyword
+item_group | false | retrieve reviews for the given group of products, if specified, sku is ignored
+q | false | retrieve product reviews matching given keywords
 brand | false | retrieve products matching brand
 categories | false | retrieve products in the given categories
 only_photos | false | retrieve product reviews containing customer product images, default 0 (1=Yes, 0=No)
 price_range | false | retrieve products in the given prices [min],[max]
 reviews_range | false | retrieve products with the given number of reviews [min],[max]
+ratings | false | returns only product reviews with the specified comma separated ratings, for example (3,4,5), defaults to all ratings
 deleted | false | returns only deleted product reviews (0 or 1)
 date_from | false | start date in format (yyyy-mm-dd hh:mm:ss) [hh:mm:ss] is optional
 date_to | false | end date in format (yyyy-mm-dd hh:mm:ss) [hh:mm:ss] is optional
+order | false | specifies the order (created=most recent, relevant=most relevant), defaults to most recent

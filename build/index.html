@@ -3529,12 +3529,12 @@ https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews?client_t
 <tr>
 <td>item_group</td>
 <td>false</td>
-<td>retrieve reviews for the given group of products, if specified sku is ignored</td>
+<td>retrieve reviews for the given group of products, if specified, sku is ignored</td>
 </tr>
 <tr>
 <td>q</td>
 <td>false</td>
-<td>retrieve product reviews matching given keyword</td>
+<td>retrieve product reviews matching given keywords</td>
 </tr>
 <tr>
 <td>brand</td>
@@ -3562,6 +3562,11 @@ https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews?client_t
 <td>retrieve products with the given number of reviews [min],[max]</td>
 </tr>
 <tr>
+<td>ratings</td>
+<td>false</td>
+<td>returns only product reviews with the specified comma separated ratings, for example (3,4,5), defaults to all ratings</td>
+</tr>
+<tr>
 <td>deleted</td>
 <td>false</td>
 <td>returns only deleted product reviews (0 or 1)</td>
@@ -3575,6 +3580,11 @@ https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews?client_t
 <td>date_to</td>
 <td>false</td>
 <td>end date in format (yyyy-mm-dd hh:mm:ss) [hh:mm:ss] is optional</td>
+</tr>
+<tr>
+<td>order</td>
+<td>false</td>
+<td>specifies the order (created=most recent, relevant=most relevant), defaults to most recent</td>
 </tr>
 </tbody></table>
 <h2 id='add-product-review'>Add product review</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582"</span> <span class="nt">-F</span> <span class="s2">"sku=26"</span> <span class="nt">-F</span> <span class="s2">"title=playstation"</span> <span class="nt">-F</span> <span class="s2">"content=very%20good"</span> <span class="nt">-F</span> <span class="s2">"rating=5"</span> <span class="nt">-F</span> <span class="s2">"caption1=my%20flowers"</span> <span class="nt">-F</span> <span class="s2">"caption2=more%20flowers"</span> <span class="nt">-F</span> <span class="s2">"image1=https://img.server.xyz/image.jpg"</span> <span class="nt">-F</span> <span class="s2">"image2=@/home/filename.jpg"</span> <span class="s2">"https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/add?client_token=myapikey"</span>
@@ -3938,15 +3948,35 @@ https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats?cl
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"product_reviews_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-         </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2622</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"average_rating"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.43"</span><span class="w">
+    </span><span class="s2">"total"</span><span class="err">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"average_rating"</span><span class="err">:</span><span class="w"> </span><span class="mf">4.85</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ratings"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"num_reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"num_reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"num_reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"num_reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"num_reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
       </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint get the published product reviews stats (total and average rating).</p>
+<p>This endpoint get the published product reviews stats (total and average rating), and detailed ratings for each star.</p>
 <h3 id='http-request'>HTTP request</h3>
 <p><code>GET https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats</code></p>
 <h3 id='query-parameters'>Query parameters</h3>

@@ -27,16 +27,36 @@ curl_close($ch);
 {
   "status": "OK",
   "product_reviews_stats": [
-      {
-         "total": 2622,
-         "average_rating": "4.43"
+    "total": 55,
+    "average_rating": 4.85,
+    "ratings": {
+      "1": {
+        "num_reviews": 0,
+        "rating": 1
+      },
+      "2": {
+        "num_reviews": 0,
+        "rating": 2
+      },
+      "3": {
+        "num_reviews": 1,
+        "rating": 3
+      },
+      "4": {
+        "num_reviews": 6,
+        "rating": 4
+      },
+      "5": {
+        "num_reviews": 48,
+        "rating": 5
       }
+    }
   ],
   "success": true
 }
 ```
 
-This endpoint get the published product reviews stats (total and average rating).
+This endpoint get the published product reviews stats (total and average rating), and detailed ratings for each star.
 
 ### HTTP request
 
