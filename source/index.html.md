@@ -14,6 +14,7 @@ includes:
   - endpoints/get-reviews-of-a-business
   - endpoints/publish-an-unpublished-review
   - endpoints/flag-a-review
+  - endpoints/get-questions
   - endpoints/get-review-comments
   - endpoints/add-comment-to-review
   - endpoints/send-resolution-message-to-user
@@ -32,6 +33,7 @@ includes:
   - endpoints/add-product-review-vote
   - endpoints/get-top-rated-product
   - endpoints/get-product-reviews-stats
+  - endpoints/get-product-questions
   - endpoints/create-product-review-request
   - endpoints/remove-product-review-request
   - endpoints/access-customer-information
