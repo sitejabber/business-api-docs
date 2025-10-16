@@ -41,4 +41,4 @@ Parameter | Required | Description
 sku| true | product sku
 image | true | image url
 
-# Product Reviews
+# Product Questions

@@ -251,4 +251,4 @@ Parameter | Required | Description
 --------- | ------- | -----------
 businesses | true | all businesses to be queried encoded and json format
 
-# Reviews
+# Business Questions

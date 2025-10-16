@@ -184,3 +184,5 @@ count | 10 | number of questions to be included (max 100)
 sku | null | search questions by the given product sku
 filter | null | PENDING/PUBLISHED/REMOVED, defaults to non removed questions
 order | DESC | ASC/DESC order of the questions, ascending or descending on the creation date
+
+# Product Reviews

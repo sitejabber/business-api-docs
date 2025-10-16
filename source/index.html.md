@@ -10,11 +10,11 @@ includes:
   - intro
   - endpoints/get-info-for-a-given-business
   - endpoints/get-info-for-several-businesses
+  - endpoints/get-questions
   - endpoints/get-a-review-of-a-business
   - endpoints/get-reviews-of-a-business
   - endpoints/publish-an-unpublished-review
   - endpoints/flag-a-review
-  - endpoints/get-questions
   - endpoints/get-review-comments
   - endpoints/add-comment-to-review
   - endpoints/send-resolution-message-to-user
@@ -28,12 +28,12 @@ includes:
   - endpoints/add-product
   - endpoints/remove-product
   - endpoints/add-product-image
+  - endpoints/get-product-questions
   - endpoints/get-product-reviews
   - endpoints/add-product-review
   - endpoints/add-product-review-vote
   - endpoints/get-top-rated-product
   - endpoints/get-product-reviews-stats
-  - endpoints/get-product-questions
   - endpoints/create-product-review-request
   - endpoints/remove-product-review-request
   - endpoints/access-customer-information
