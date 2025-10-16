@@ -153,3 +153,5 @@ Parameter | Default | Description
 start | 0 | starting offset
 count | 10 | number of questions to be included (max 100)
 order | DESC | ASC/DESC order of the questions, ascending or descending on the creation date
+
+# Reviews
