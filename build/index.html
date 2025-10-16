@@ -352,6 +352,9 @@
             <a href="#review-comments" class="toc-h1 toc-link" data-title="Review Comments">Review Comments</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#get-questions" class="toc-h2 toc-link" data-title="Get questions">Get questions</a>
+                  </li>
+                  <li>
                     <a href="#get-review-comments" class="toc-h2 toc-link" data-title="Get review comments">Get review comments</a>
                   </li>
                   <li>
@@ -440,6 +443,9 @@
           <li>
             <a href="#product-review-requests" class="toc-h1 toc-link" data-title="Product Review Requests">Product Review Requests</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-product-questions" class="toc-h2 toc-link" data-title="Get product questions">Get product questions</a>
+                  </li>
                   <li>
                     <a href="#create-product-review-request" class="toc-h2 toc-link" data-title="Create product review request">Create product review request</a>
                   </li>
@@ -1397,6 +1403,282 @@
 <td>DateTime</td>
 <td>Yes</td>
 <td>DateTime the product review was removed in format RFC 3339 (only available if the product review is removed)</td>
+</tr>
+</tbody></table>
+
+<p>ProductQuestion Object</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>No</td>
+<td>Internal question ID</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>No</td>
+<td>Content of the question</td>
+</tr>
+<tr>
+<td>created</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Creation date of the question</td>
+</tr>
+<tr>
+<td>createdRFC</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Same as created but in format RFC 3339</td>
+</tr>
+<tr>
+<td>published</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Publication date of the question</td>
+</tr>
+<tr>
+<td>publishedRFC</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Same as published but in format RFC 3339</td>
+</tr>
+<tr>
+<td>removed</td>
+<td>Boolean</td>
+<td>No</td>
+<td>Indicates if the question is removed</td>
+</tr>
+<tr>
+<td>num_answers</td>
+<td>Integer</td>
+<td>No</td>
+<td>Number of answers</td>
+</tr>
+<tr>
+<td>sum_votes</td>
+<td>Integer</td>
+<td>No</td>
+<td>Number of votes</td>
+</tr>
+<tr>
+<td>answers</td>
+<td>ProductAnswer object</td>
+<td>Yes</td>
+<td>Array of product answer objects</td>
+</tr>
+<tr>
+<td>product</td>
+<td>Product object</td>
+<td>No</td>
+<td>Product of the question</td>
+</tr>
+<tr>
+<td>author</td>
+<td>User object</td>
+<td>No</td>
+<td>Author of the question</td>
+</tr>
+</tbody></table>
+
+<p>ProductAnswer Object</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>No</td>
+<td>Internal answer ID</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>No</td>
+<td>Content of the answer</td>
+</tr>
+<tr>
+<td>created</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Creation date of the answer</td>
+</tr>
+<tr>
+<td>createdRFC</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Same as created but in format RFC 3339</td>
+</tr>
+<tr>
+<td>published</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Publication date of the question</td>
+</tr>
+<tr>
+<td>publishedRFC</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Same as published but in format RFC 3339</td>
+</tr>
+<tr>
+<td>num_votes</td>
+<td>Integer</td>
+<td>No</td>
+<td>Number of votes</td>
+</tr>
+<tr>
+<td>num_positive_votes</td>
+<td>Integer</td>
+<td>No</td>
+<td>Number of positive votes</td>
+</tr>
+<tr>
+<td>num_negative_votes</td>
+<td>Integer</td>
+<td>No</td>
+<td>Number of negative votes</td>
+</tr>
+<tr>
+<td>author</td>
+<td>User object</td>
+<td>No</td>
+<td>Author of the answer</td>
+</tr>
+</tbody></table>
+
+<p>Question Object</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>No</td>
+<td>Internal question ID</td>
+</tr>
+<tr>
+<td>business</td>
+<td>String</td>
+<td>No</td>
+<td>Url belonging to the question</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>No</td>
+<td>Content of the question</td>
+</tr>
+<tr>
+<td>created</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Creation date of the question</td>
+</tr>
+<tr>
+<td>createdRFC</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Same as created but in format RFC 3339</td>
+</tr>
+<tr>
+<td>num_answers</td>
+<td>Integer</td>
+<td>No</td>
+<td>Number of answers</td>
+</tr>
+<tr>
+<td>slug</td>
+<td>String</td>
+<td>No</td>
+<td>Slug to access the question</td>
+</tr>
+<tr>
+<td>sum_votes</td>
+<td>Integer</td>
+<td>No</td>
+<td>Number of votes</td>
+</tr>
+<tr>
+<td>answers</td>
+<td>Answer object</td>
+<td>Yes</td>
+<td>Array of answer objects</td>
+</tr>
+<tr>
+<td>author</td>
+<td>User object</td>
+<td>No</td>
+<td>Author of the question</td>
+</tr>
+</tbody></table>
+
+<p>Answer Object</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>No</td>
+<td>Internal answer ID</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>No</td>
+<td>Content of the answer</td>
+</tr>
+<tr>
+<td>created</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Creation date of the answer</td>
+</tr>
+<tr>
+<td>createdRFC</td>
+<td>DateTime</td>
+<td>No</td>
+<td>Same as created but in format RFC 3339</td>
+</tr>
+<tr>
+<td>num_votes</td>
+<td>Integer</td>
+<td>No</td>
+<td>Number of votes</td>
+</tr>
+<tr>
+<td>author</td>
+<td>User object</td>
+<td>No</td>
+<td>Author of the answer</td>
 </tr>
 </tbody></table>
 
@@ -2365,7 +2647,168 @@ Calling login method invalidates any previous generated user token.
 <td>feedback message explaining the reason</td>
 </tr>
 </tbody></table>
-<h1 id='review-comments'>Review Comments</h1><h2 id='get-review-comments'>Get review comments</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582"</span> <span class="s2">"https://api.sitejabber.com/v1/businesses/yourdomain.com/review/comments?client_token=myapikey"</span>
+<h1 id='review-comments'>Review Comments</h1><h2 id='get-questions'>Get questions</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582"</span> <span class="s2">"https://api.sitejabber.com/v1/businesses/yourdomain.com/questions?client_token=myapikey"</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$header</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582'</span>
+<span class="p">];</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.sitejabber.com/v1/businesses/yourdomain.com/questions?client_token=myapikey'</span><span class="p">;</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_HTTP_VERSION</span><span class="p">,</span> <span class="no">CURL_HTTP_VERSION_1_1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$header</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns (Array of Question Object) JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Domain"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlAddress"</span><span class="p">:</span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">yourdomain.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"displayAddress"</span><span class="p">:</span><span class="s2">"yourdomain.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlProfilePage"</span><span class="p">:</span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">reviews</span><span class="se">\/</span><span class="s2">www.yourdomain.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"averageRating"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"overall"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.56</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipping"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"returns"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quality"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"numReviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"total"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fiveStars"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fourStars"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"threeStars"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twoStars"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oneStar"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:{</span><span class="w">  
+      </span><span class="nl">"streetAddress"</span><span class="p">:</span><span class="s2">"FakeStreet"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"streetAddress2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"FakeCity"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postalCode"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"completeAddress"</span><span class="p">:</span><span class="s2">"FakeCity, CA, USA"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"business"</span><span class="p">:</span><span class="s2">"yourdomain.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Actually I have ordered from this company 2 times and am getting ready to place another order. The service, delivery and quality have all been great. I am not sure why others have had issues, but I have no complaints."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013/05/13 07:21:04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdRFC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-05-13T07:21:04+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_answers"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"actually-i-have-ordered-from-this-company-2-times-and-am-getting-ready-to-place-another-order-the-service-delivery-and-quality-have-all-been-great-i-am-not-sure-why-others-have-had-issues-but-i-have-no-complaints-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sum_votes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For the Hi-Lo effect can I use the 17</span><span class="se">\"</span><span class="s2"> square?"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013/05/13 07:08:16"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"createdRFC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-05-13T07:08:16+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"num_votes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">img</span><span class="se">\/</span><span class="s2">profile-default%402x.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"profilePage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">users</span><span class="se">\/</span><span class="s2">test"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numReviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numHelpfulVotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user_photo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">img</span><span class="se">\/</span><span class="s2">profile-default%402x.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"profilePage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">users</span><span class="se">\/</span><span class="s2">test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"numReviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"numHelpfulVotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user_photo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all questions.</p>
+<h3 id='http-request'>HTTP request</h3>
+<p><code>GET https://api.sitejabber.com/v1/businesses/yourdomain.com/questions</code></p>
+<h3 id='query-parameters'>Query parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>start</td>
+<td>0</td>
+<td>starting offset</td>
+</tr>
+<tr>
+<td>count</td>
+<td>10</td>
+<td>number of questions to be included (max 100)</td>
+</tr>
+<tr>
+<td>order</td>
+<td>DESC</td>
+<td>ASC/DESC order of the questions, ascending or descending on the creation date</td>
+</tr>
+</tbody></table>
+<h2 id='get-review-comments'>Get review comments</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582"</span> <span class="s2">"https://api.sitejabber.com/v1/businesses/yourdomain.com/review/comments?client_token=myapikey"</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$header</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">'user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582'</span>
@@ -4008,7 +4451,207 @@ https://api.sitejabber.com/v1/businesses/yourdomain.com/product/reviews/stats?cl
 <td>retrieve stats for products in the given brand</td>
 </tr>
 </tbody></table>
-<h1 id='product-review-requests'>Product Review Requests</h1><h2 id='create-product-review-request'>Create product review request</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582"</span> <span class="nt">-d</span> <span class="s2">"email=test@test.com&amp;product_sku=4457,4458,4459&amp;order_id=XHS2854&amp;order_date=2017-04-28&amp;first_name=John&amp;last_name=Doe"</span> <span class="s2">"https://api.sitejabber.com/v1/businesses/yourdomain.com/product/review/request/add?client_token=myapikey"</span>
+<h1 id='product-review-requests'>Product Review Requests</h1><h2 id='get-product-questions'>Get product questions</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582"</span> <span class="s2">"https://api.sitejabber.com/v1/businesses/yourdomain.com/product/questions?client_token=myapikey"</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$header</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582'</span>
+<span class="p">];</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.sitejabber.com/v1/businesses/yourdomain.com/product/questions?client_token=myapikey'</span><span class="p">;</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_HTTP_VERSION</span><span class="p">,</span> <span class="no">CURL_HTTP_VERSION_1_1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$header</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns (Array of ProductQuestion Object) JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Domain"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlAddress"</span><span class="p">:</span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">yourdomain.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"displayAddress"</span><span class="p">:</span><span class="s2">"yourdomain.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"urlProfilePage"</span><span class="p">:</span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">reviews</span><span class="se">\/</span><span class="s2">www.yourdomain.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"averageRating"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"overall"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.56</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipping"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"returns"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quality"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"numReviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"total"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fiveStars"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fourStars"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"threeStars"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twoStars"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oneStar"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:{</span><span class="w">  
+      </span><span class="nl">"streetAddress"</span><span class="p">:</span><span class="s2">"FakeStreet"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"streetAddress2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"FakeCity"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postalCode"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"completeAddress"</span><span class="p">:</span><span class="s2">"FakeCity, CA, USA"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are there any other colour options available besides clear?"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021/07/07 00:33:38"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdRFC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-07T00:33:38+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021/07/07 00:37:09"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"publishedRFC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-07T00:37:09+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"removed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"num_answers"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sum_votes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, this screen also comes in smoke, dark smoke, and black. If you'd like us to order in one of those colours, simply contact us and we can add one to our next Puig shipment for you."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021/07/07 00:37:41"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"createdRFC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-07T00:37:41+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021/07/07 00:38:06"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"publishedRFC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-07T00:38:06+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"num_votes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"num_positive_votes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"num_negative_votes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">img</span><span class="se">\/</span><span class="s2">profile-default%402x.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"profilePage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">users</span><span class="se">\/</span><span class="s2">test"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numReviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numHelpfulVotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user_photo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6486W"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"item_group"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gtin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6486000000877"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mpn"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puig"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puig Touring Screen"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.95</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"retail_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">product.test.sitejabber.com</span><span class="se">\/</span><span class="s2">puig-touring-screen-bmw-r1200gs-13-18-r1200gs-adve"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">product.test.sitejabber.com</span><span class="se">\/</span><span class="s2">6486W.jpg"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"num_reviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"average_rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021/06/18 14:52:21"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"createdRFC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-06-18T14:52:21+00:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">img</span><span class="se">\/</span><span class="s2">profile-default%402x.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"profilePage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.sitejabber.com</span><span class="se">\/</span><span class="s2">users</span><span class="se">\/</span><span class="s2">test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"numReviews"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"numHelpfulVotes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user_photo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6486W"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all product questions.</p>
+<h3 id='http-request'>HTTP request</h3>
+<p><code>GET https://api.sitejabber.com/v1/businesses/yourdomain.com/product/questions</code></p>
+<h3 id='query-parameters'>Query parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>start</td>
+<td>0</td>
+<td>starting offset</td>
+</tr>
+<tr>
+<td>count</td>
+<td>10</td>
+<td>number of questions to be included (max 100)</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>null</td>
+<td>search questions by the given product sku</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>null</td>
+<td>PENDING/PUBLISHED/REMOVED, defaults to non removed questions</td>
+</tr>
+<tr>
+<td>order</td>
+<td>DESC</td>
+<td>ASC/DESC order of the questions, ascending or descending on the creation date</td>
+</tr>
+</tbody></table>
+<h2 id='create-product-review-request'>Create product review request</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582"</span> <span class="nt">-d</span> <span class="s2">"email=test@test.com&amp;product_sku=4457,4458,4459&amp;order_id=XHS2854&amp;order_date=2017-04-28&amp;first_name=John&amp;last_name=Doe"</span> <span class="s2">"https://api.sitejabber.com/v1/businesses/yourdomain.com/product/review/request/add?client_token=myapikey"</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$header</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">'user_token: 5922b0ad07f849330de5af5c07fdd27ead7f4582'</span>

@@ -202,6 +202,64 @@ createdRFC | DateTime | No | Same as created but in format RFC 3339
 product | Product object | No | Product of the review
 removedRFC | DateTime | Yes | DateTime the product review was removed in format RFC 3339 (only available if the product review is removed)
 
+ProductQuestion Object
+
+Name | Type | Optional | Description
+--------- | ------- | ----------- | -----------
+id | Integer | No | Internal question ID
+content | String | No | Content of the question
+created | DateTime | No | Creation date of the question
+createdRFC | DateTime | No | Same as created but in format RFC 3339
+published | DateTime | No | Publication date of the question
+publishedRFC | DateTime | No | Same as published but in format RFC 3339
+removed | Boolean | No | Indicates if the question is removed
+num_answers | Integer | No | Number of answers
+sum_votes | Integer | No | Number of votes
+answers | ProductAnswer object | Yes | Array of product answer objects
+product | Product object | No | Product of the question
+author | User object | No | Author of the question
+
+ProductAnswer Object
+
+Name | Type | Optional | Description
+--------- | ------- | ----------- | -----------
+id | Integer | No | Internal answer ID
+content | String | No | Content of the answer
+created | DateTime | No | Creation date of the answer
+createdRFC | DateTime | No | Same as created but in format RFC 3339
+published | DateTime | No | Publication date of the question
+publishedRFC | DateTime | No | Same as published but in format RFC 3339
+num_votes | Integer | No | Number of votes
+num_positive_votes | Integer | No | Number of positive votes
+num_negative_votes | Integer | No | Number of negative votes
+author | User object | No | Author of the answer
+
+Question Object
+
+Name | Type | Optional | Description
+--------- | ------- | ----------- | -----------
+id | Integer | No | Internal question ID
+business | String | No | Url belonging to the question
+content | String | No | Content of the question
+created | DateTime | No | Creation date of the question
+createdRFC | DateTime | No | Same as created but in format RFC 3339
+num_answers | Integer | No | Number of answers
+slug | String | No | Slug to access the question
+sum_votes | Integer | No | Number of votes
+answers | Answer object | Yes | Array of answer objects
+author | User object | No | Author of the question
+
+Answer Object
+
+Name | Type | Optional | Description
+--------- | ------- | ----------- | -----------
+id | Integer | No | Internal answer ID
+content | String | No | Content of the answer
+created | DateTime | No | Creation date of the answer
+createdRFC | DateTime | No | Same as created but in format RFC 3339
+num_votes | Integer | No | Number of votes
+author | User object | No | Author of the answer
+
 All responses includes the Status object
 
 Status Object
